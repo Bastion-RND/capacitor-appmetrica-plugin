@@ -1,5 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
-import {
+
+import type {
   AppMetricaPlugin,
   YAMConfig,
   YAMReportEventOptions,
@@ -15,13 +16,10 @@ import {
 } from './definitions';
 
 export class AppMetricaWeb extends WebPlugin implements AppMetricaPlugin {
-  private isMetricaLogs: boolean = false;
+  private isMetricaLogs = false;
 
   constructor() {
-    super({
-      name: 'AppMetrica',
-      platforms: ['web'],
-    });
+    super();
   }
 
   private log(...vars: any[]) {
