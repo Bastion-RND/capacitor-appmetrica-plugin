@@ -1,43 +1,12 @@
 # Плагин Yandex App Metrica для Capacitor
-
-- Поддержка Capacitor 2, 3 - 5, 6.
+  Форк AppMertica плагина 
 - Работает на платформах: iOS, Android.
 - Поддерживает E-Commerce события
 - Поддерживает отправку атрибутов профиля
-- Deeplinks (не тестровались)
-- Locations (не тестровались)
 
 **Версии App Metrica SDK:**
 - iOS: **4.5.0**
 - Android: **5.2.0**
-
-## Демо приложение
-
-```bash
-cd example
-
-npm install
-npm run build
-
-npx cap sync
-npx cap open android|ios
-```
-
-## Установка
-
-Capacitor 3, 4, 5:
-```bash
-npm install capacitor-appmetrica-plugin
-
-npx cap sync
-```
-
-Для Capacitor 2:
-```bash
-npm install capacitor-appmetrica-plugin@^2.0.0
-
-npx cap sync
-```
 
 ### Android
 
@@ -360,7 +329,7 @@ AppMetrica.reportUserProfile(userProfile);
       addedItem,
       // ...
     ],
-    "payload": ["black_friday": "true"]
+    "payload": ["black_friday", "true"]
   };
 
   // Начало оформления
@@ -379,7 +348,7 @@ AppMetrica.reportUserProfile(userProfile);
 
   ```ts
   const location: YAMLocation = {
-    latitude: 51.660781
+    latitude: 51.660781,
     longitude: 39.200296
 
     // altitude?: number;
@@ -402,16 +371,3 @@ AppMetrica.reportUserProfile(userProfile);
   AppMetrica.setLocationTracking({ enabled: true });
   ```
 </details>
-
----------------------------------------
-
-## Документация
-
-#### Android SDK
-* [docs](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/android/about/android-initialize.html)
-* [ecommerce](https://appmetrica.yandex.ru/docs/data-collection/sending-ecommerce-android.html)
-
-#### iOS SDK
-* [docs](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/ios-quickstart.html)
-* [ecommerce](https://appmetrica.yandex.ru/docs/data-collection/sending-ecommerce-ios.html)
-* [deeplinks](https://appmetrica.yandex.ru/docs/data-collection/tracking-deeplink-ios.html)
